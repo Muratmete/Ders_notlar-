@@ -1,6 +1,8 @@
 const form = document.querySelector("section.top-banner form");
+
 const input = document.querySelector(".container input");
 const msg = document.querySelector("span.msg");
+//!Boşluk koyarsa alt element, boşluk yoksa tek bir elementte bu iki class da var demek oluyor.
 const list = document.querySelector(".ajax-section ul.cities");
 
 // localStorage.setItem("tokenKeyEncrypted", EncryptStringAES("4d8fb5b93d4af21d66a2948710284366"));
@@ -34,6 +36,7 @@ const getWeatherDataFromApi = async () => {
 
     const cityNameSpans = list.querySelectorAll(".city span");
     const cityNameSpansArray = Array.from(cityNameSpans);
+    console.log(cityNameSpans);
     if (cityNameSpansArray.length > 0) {
       const filteredArray = cityNameSpansArray.filter(
         (span) => span.innerText == name
